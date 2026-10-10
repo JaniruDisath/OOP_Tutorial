@@ -26,8 +26,6 @@ public class ProductService {
                 .findFirst();
     }
 
-    // continued →
-// ...ProductService (continued)
     public Product addProduct(
             Product product) {
         product.setId(nextId);
