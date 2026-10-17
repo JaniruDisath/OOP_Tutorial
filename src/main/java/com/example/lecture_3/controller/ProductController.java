@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @ResponseBody
 @Controller
@@ -24,15 +25,16 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(
-            @PathVariable Long id) {
-        return productService.getProductById(id)
-                .orElse(null); // orElse(null) is a
-// placeholder we replace with a real 404 later.
+    public Product getProductById(@PathVariable Long id) {
+        return productService.getProductById(id).orElse(null);
     }
 
-    // continued →
-// ...ProductController (continued)
+    @GetMapping("/find/{name}")
+    public Optional<Product> findByName(@PathVariable String name){
+        System.out.println(name);
+        return productService.findByName(name);
+    }
+
     @PostMapping()
     public Product saveProduct(
             @RequestBody Product product) {

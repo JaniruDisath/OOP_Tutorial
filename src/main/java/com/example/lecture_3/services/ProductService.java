@@ -26,6 +26,10 @@ public class ProductService {
                 .findFirst();
     }
 
+    public Optional<Product> findByName(String name){
+        return products.stream().filter(p-> p.getName().equals(name)).findFirst();
+    }
+
     public Product addProduct(
             Product product) {
         product.setId(nextId);
