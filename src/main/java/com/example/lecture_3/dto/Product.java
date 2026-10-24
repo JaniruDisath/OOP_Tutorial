@@ -1,9 +1,20 @@
 package com.example.lecture_3.dto;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({
+        @JsonSubTypes.Type(DigitalProduct.class),
+        @JsonSubTypes.Type(PhysicalProduct.class)
+})
+
 public class Product {
     private Long id;
     private String name;
     private Double price;
+
 
     public Product() {
     } // required by Jackson

@@ -2,25 +2,25 @@ package com.example.lecture_3.dto;
 
 public class DigitalProduct extends Product {
 
-    private String downlaodUrl;
+    private String downloadUrl;
     private Double fileSizeMB;
 
 
     public DigitalProduct() {
     }
 
-    public DigitalProduct(Long id, String name, double price, String downlaodUrl, Double fileSizeMB) {
+    public DigitalProduct(Long id, String name, double price, String downloadUrl, Double fileSizeMB) {
         super(id, name, price);
-        this.downlaodUrl = downlaodUrl;
+        this.downloadUrl = downloadUrl;
         this.fileSizeMB = fileSizeMB;
     }
 
-    public String getDownlaodUrl() {
-        return downlaodUrl;
+    public String getDownloadUrl() {
+        return downloadUrl;
     }
 
-    public void setDownlaodUrl(String downlaodUrl) {
-        this.downlaodUrl = downlaodUrl;
+    public void setDownloadUrl(String downloadUrl) {
+        this.downloadUrl = downloadUrl;
     }
 
     public Double getFileSizeMB() {

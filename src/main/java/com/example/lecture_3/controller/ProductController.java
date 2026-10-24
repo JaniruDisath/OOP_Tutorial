@@ -35,7 +35,7 @@ public class ProductController {
         return productService.findByName(name);
     }
 
-    @PostMapping()
+    @PostMapping("/add")
     public Product saveProduct(
             @RequestBody Product product) {
         return productService.addProduct(product);

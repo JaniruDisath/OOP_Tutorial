@@ -1,5 +1,6 @@
 package com.example.lecture_3.services;
 
+import com.example.lecture_3.dto.PhysicalProduct;
 import com.example.lecture_3.dto.Product;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +10,21 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
+
     private List<Product> products
             = new ArrayList<>();
     private Long nextId = 1L;
 
-    public List<Product> getAllProducts() {
+    public ProductService(){
+        addProducts();
+    }
+
+    private void addProducts(){
         products.add(new Product(1L, "Laptop", 999.99));
+        products.add(new PhysicalProduct(1L, "Laptop", 999.99, 10.0, "Hello"));
+    }
+
+    public List<Product> getAllProducts() {
         return products;
     }
 
